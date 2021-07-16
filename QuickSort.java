@@ -1,3 +1,18 @@
+/*
+Time Complexity {
+    Best : "O(n log(n))"
+    Avg : "O(n log(n))"
+    Worst : "O(n^2)"
+
+}
+
+Space Complixity {
+    O(log(n))
+}
+
+
+*/
+
 public class QuickSort{
     private int []theArray;
     private int arrSize;
