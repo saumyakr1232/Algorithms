@@ -81,9 +81,10 @@ public class MaxHeap {
         
          // down heap bubbling
          while(hi < cSize && data[hi] < data[hi])
-         return popped;
          
+         return popped;
 
+        
 
     }
 

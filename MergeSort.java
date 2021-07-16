@@ -7,12 +7,13 @@ public class MergeSort {
     MergeSort(int size){
         this.arrSize = size;
         this.theArray = new int[size];
+        theArray = Utils.generateRandomArray(this.arrSize);
     }
 
     public static void main(String[] args) {
 
         MergeSort mergeSort = new MergeSort(10000);
-        mergeSort.generateRandomArray();
+        
 
         double startTime, endTime;
 
@@ -25,13 +26,7 @@ public class MergeSort {
         
     }
 
-    public void generateRandomArray(){
-        for (int i = 0; i< arrSize; i++){
-            theArray[i] = (int) (Math.random() * 1000) + 10;
 
-        }
-
-    }
 
     public int[] mergeSort(int array[]){
 
