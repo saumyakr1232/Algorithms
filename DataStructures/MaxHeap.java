@@ -80,7 +80,7 @@ public class MaxHeap {
          data[cSize] = -1;
         
          // down heap bubbling
-         while(hi < cSize && data[hi] < data[hi])
+         while(hi < cSize && data[hi] < data[hi]);
          
          return popped;
 
