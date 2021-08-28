@@ -1,4 +1,8 @@
 package SortingAlgorithms;
+
+import java.nio.channels.Selector;
+import java.util.Arrays;
+
 /**
  * Time Complexity : O(n^2)
  * 
@@ -6,50 +10,44 @@ package SortingAlgorithms;
  */
 
 public class SelectionSort {
-
+    private int[] theArray;
     public static void main(String[] args) {
-        int[] arr = new int[]{2,22,4,43,6,9,8,7};
+        SelectionSort ss = new SelectionSort(10);
+        System.out.println("Before sorting " + Arrays.toString(ss.theArray));
+        ss.sort();
+        System.out.println("After sorting " + Arrays.toString(ss.theArray));
 
-        // System.out.println(selectionSort(arr));
-
-        for (int i: selectionSort(arr)){
-            System.out.print(i + " ");
-        }
     }
 
-    public static int[] selectionSort(int[] arr){
+    public SelectionSort(int size){
+        theArray = Utils.generateRandomArray(size);
+    }
 
+    public void sort(){
         int wall = -1;
 
-        while(wall < arr.length - 1){
-
-        int min_index = 0;
-        int min = Integer.MAX_VALUE;
-        for (int i= wall + 1; i< arr.length ; i++){
-            if (arr[i] < min){
-                min = arr[i];
-                min_index = i;
+        while (wall < theArray.length - 1){
+            int min_i = 0;
+            int min = Integer.MAX_VALUE;
+            
+            for (int i= wall + 1; i<theArray.length; i++){
+                if (theArray[i] < min){
+                    min = theArray[i];
+                    min_i = i;
+                }
             }
+
+            swap(min_i, ++wall);
         }
-    
-
-        arr = swap(++wall, min_index, arr);
-
-
     }
 
-    return arr;
-
-
-
+    public  void swap(int pos1, int pos2){
+        int temp = theArray[pos1];
+        theArray[pos1] = theArray[pos2];
+        theArray[pos2] = temp;
+     
     }
 
-    public static int[] swap(int pos1, int pos2, int[] arr){
 
-        int temp = arr[pos1];
-        arr[pos1] = arr[pos2];
-        arr[pos2] = temp;
-        return arr;
-    }
-    
+
 }
