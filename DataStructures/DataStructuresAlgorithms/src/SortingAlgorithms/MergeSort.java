@@ -13,21 +13,21 @@ public class MergeSort {
 
     public static void main(String[] args) {
 
-        MergeSort mergeSort = new MergeSort(10000);
+        MergeSort mergeSort = new MergeSort(10);
         
 
         double startTime, endTime;
 
         startTime = System.currentTimeMillis();
-        mergeSort.mergeSort(mergeSort.theArray);
+        System.out.println("unsorted " + Arrays.toString(mergeSort.theArray));
+        // mergeSort.mergeSort(mergeSort.theArray);
+        System.out.println("Sorted " + Arrays.toString(mergeSort.mergeSort(mergeSort.theArray)));
         endTime = System.currentTimeMillis();
 
         System.out.println("Merge sort took " + (endTime - startTime));
 
         
     }
-
-
 
     public int[] mergeSort(int array[]){
 
@@ -74,9 +74,9 @@ public class MergeSort {
         }
 
         // remaining of second array
-        while(ptr_one < left.length){
-            merged[ptr_merged] = left[ptr_one];
-            ptr_one++;
+        while(ptr_two < right.length){
+            merged[ptr_merged] = right[ptr_two];
+            ptr_two++;
             ptr_merged++;
         }
 
@@ -85,5 +85,6 @@ public class MergeSort {
 
 
     }
+    
     
 }
